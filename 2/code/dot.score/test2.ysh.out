@@ -1,0 +1,18 @@
+./yshell build Feb  4 2021 16:42:55
+% Bad command.  Was a message printed, and the program continued?
+% make file this is the first file
+% make second file
+% make third file with more stuff in it
+% cat file
+this is the first file
+% cat second
+file
+% cat file second third
+cat: filesecondthird: No such file or directory
+% ls /
+ . .. file second third
+% # Checking on making files and catting them.
+% # Does ls with files work?
+% # $Id: test2.ysh,v 1.1 2013-01-02 19:11:43-08 - - $
+% ^D
+yshell: exit(1)

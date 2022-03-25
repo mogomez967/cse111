@@ -1,0 +1,77 @@
+==28260== Memcheck, a memory error detector
+==28260== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==28260== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==28260== Command: ./ydc
+==28260== 
+==28260== Conditional jump or move depends on uninitialised value(s)
+==28260==    at 0x404AD3: ubigint::divide_by_2() (ubigint.cpp:364)
+==28260==    by 0x404E12: udivide(ubigint const&, ubigint const&) (ubigint.cpp:416)
+==28260==    by 0x404F60: ubigint::operator/(ubigint const&) const (ubigint.cpp:427)
+==28260==    by 0x4090B9: bigint::operator/(bigint const&) const (bigint.cpp:144)
+==28260==    by 0x40DA4D: do_arith(iterstack<bigint, std::vector<bigint, std::allocator<bigint> > >&, char) (main.cpp:36)
+==28260==    by 0x40E27F: do_function(iterstack<bigint, std::vector<bigint, std::allocator<bigint> > >&, char) (main.cpp:88)
+==28260==    by 0x40E651: main (main.cpp:148)
+==28260== 
+==28260== Invalid read of size 1
+==28260==    at 0x404ABF: ubigint::divide_by_2() (ubigint.cpp:362)
+==28260==    by 0x404E21: udivide(ubigint const&, ubigint const&) (ubigint.cpp:417)
+==28260==    by 0x404F60: ubigint::operator/(ubigint const&) const (ubigint.cpp:427)
+==28260==    by 0x4090B9: bigint::operator/(bigint const&) const (bigint.cpp:144)
+==28260==    by 0x40DA4D: do_arith(iterstack<bigint, std::vector<bigint, std::allocator<bigint> > >&, char) (main.cpp:36)
+==28260==    by 0x40E27F: do_function(iterstack<bigint, std::vector<bigint, std::allocator<bigint> > >&, char) (main.cpp:88)
+==28260==    by 0x40E651: main (main.cpp:148)
+==28260==  Address 0x5a2bff4 is 0 bytes after a block of size 4 alloc'd
+==28260==    at 0x4C2A483: operator new(unsigned long) (vg_replace_malloc.c:344)
+==28260==    by 0x4084DB: __gnu_cxx::new_allocator<unsigned char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==28260==    by 0x407FF8: std::allocator_traits<std::allocator<unsigned char> >::allocate(std::allocator<unsigned char>&, unsigned long) (alloc_traits.h:436)
+==28260==    by 0x40772F: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate(unsigned long) (stl_vector.h:296)
+==28260==    by 0x406AF5: void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_insert<unsigned char const&>(__gnu_cxx::__normal_iterator<unsigned char*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char const&) (vector.tcc:427)
+==28260==    by 0x405DDB: std::vector<unsigned char, std::allocator<unsigned char> >::push_back(unsigned char const&) (stl_vector.h:1085)
+==28260==    by 0x4048D7: ubigint::multiply_by_2() (ubigint.cpp:322)
+==28260==    by 0x404D4E: udivide(ubigint const&, ubigint const&) (ubigint.cpp:409)
+==28260==    by 0x404F60: ubigint::operator/(ubigint const&) const (ubigint.cpp:427)
+==28260==    by 0x4090B9: bigint::operator/(bigint const&) const (bigint.cpp:144)
+==28260==    by 0x40DA4D: do_arith(iterstack<bigint, std::vector<bigint, std::allocator<bigint> > >&, char) (main.cpp:36)
+==28260==    by 0x40E27F: do_function(iterstack<bigint, std::vector<bigint, std::allocator<bigint> > >&, char) (main.cpp:88)
+==28260== 
+==28260== Conditional jump or move depends on uninitialised value(s)
+==28260==    at 0x404AD3: ubigint::divide_by_2() (ubigint.cpp:364)
+==28260==    by 0x404E21: udivide(ubigint const&, ubigint const&) (ubigint.cpp:417)
+==28260==    by 0x404F60: ubigint::operator/(ubigint const&) const (ubigint.cpp:427)
+==28260==    by 0x4090B9: bigint::operator/(bigint const&) const (bigint.cpp:144)
+==28260==    by 0x40DA4D: do_arith(iterstack<bigint, std::vector<bigint, std::allocator<bigint> > >&, char) (main.cpp:36)
+==28260==    by 0x40E27F: do_function(iterstack<bigint, std::vector<bigint, std::allocator<bigint> > >&, char) (main.cpp:88)
+==28260==    by 0x40E651: main (main.cpp:148)
+==28260== 
+==28260== Invalid read of size 1
+==28260==    at 0x404B2A: ubigint::divide_by_2() (ubigint.cpp:382)
+==28260==    by 0x404E21: udivide(ubigint const&, ubigint const&) (ubigint.cpp:417)
+==28260==    by 0x404F60: ubigint::operator/(ubigint const&) const (ubigint.cpp:427)
+==28260==    by 0x4090B9: bigint::operator/(bigint const&) const (bigint.cpp:144)
+==28260==    by 0x40DA4D: do_arith(iterstack<bigint, std::vector<bigint, std::allocator<bigint> > >&, char) (main.cpp:36)
+==28260==    by 0x40E27F: do_function(iterstack<bigint, std::vector<bigint, std::allocator<bigint> > >&, char) (main.cpp:88)
+==28260==    by 0x40E651: main (main.cpp:148)
+==28260==  Address 0x5a2f53f is 1 bytes before a block of size 1 alloc'd
+==28260==    at 0x4C2A483: operator new(unsigned long) (vg_replace_malloc.c:344)
+==28260==    by 0x4084DB: __gnu_cxx::new_allocator<unsigned char>::allocate(unsigned long, void const*) (new_allocator.h:111)
+==28260==    by 0x407FF8: std::allocator_traits<std::allocator<unsigned char> >::allocate(std::allocator<unsigned char>&, unsigned long) (alloc_traits.h:436)
+==28260==    by 0x40772F: std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate(unsigned long) (stl_vector.h:296)
+==28260==    by 0x407139: void std::vector<unsigned char, std::allocator<unsigned char> >::_M_realloc_insert<unsigned char>(__gnu_cxx::__normal_iterator<unsigned char*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char&&) (vector.tcc:427)
+==28260==    by 0x406381: unsigned char& std::vector<unsigned char, std::allocator<unsigned char> >::emplace_back<unsigned char>(unsigned char&&) (vector.tcc:109)
+==28260==    by 0x405843: std::vector<unsigned char, std::allocator<unsigned char> >::push_back(unsigned char&&) (stl_vector.h:1091)
+==28260==    by 0x404A66: ubigint::divide_by_2() (ubigint.cpp:357)
+==28260==    by 0x404E21: udivide(ubigint const&, ubigint const&) (ubigint.cpp:417)
+==28260==    by 0x404F60: ubigint::operator/(ubigint const&) const (ubigint.cpp:427)
+==28260==    by 0x4090B9: bigint::operator/(bigint const&) const (bigint.cpp:144)
+==28260==    by 0x40DA4D: do_arith(iterstack<bigint, std::vector<bigint, std::allocator<bigint> > >&, char) (main.cpp:36)
+==28260== 
+==28260== 
+==28260== HEAP SUMMARY:
+==28260==     in use at exit: 0 bytes in 0 blocks
+==28260==   total heap usage: 469 allocs, 469 frees, 8,898 bytes allocated
+==28260== 
+==28260== All heap blocks were freed -- no leaks are possible
+==28260== 
+==28260== For counts of detected and suppressed errors, rerun with: -v
+==28260== Use --track-origins=yes to see where uninitialised values come from
+==28260== ERROR SUMMARY: 11 errors from 4 contexts (suppressed: 0 from 0)
